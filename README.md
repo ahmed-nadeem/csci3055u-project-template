@@ -1,7 +1,7 @@
-# _Your project title_
+# _Scala Programming Language_
 
-- _your name_
-- _your email (uoit.net)_
+- _Ahmed Nadeem_
+- _ahmed.nadeem1@uoit.net_
 
 ## About the language
 
