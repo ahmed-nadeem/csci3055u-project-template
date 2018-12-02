@@ -3,7 +3,7 @@
 - _Ahmed Nadeem_
 - _ahmed.nadeem1@uoit.net_
 
-## About the language
+## About Scala
 
 > _Describe the language_
 >
