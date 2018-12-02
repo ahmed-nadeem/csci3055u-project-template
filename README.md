@@ -5,8 +5,8 @@
 
 ## About Scala
 
-> _Describe the language_
->
+_What is Scala?_
+> 
 > - History
 > - Some interesting features
 
