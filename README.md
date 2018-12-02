@@ -3,11 +3,13 @@
 - _Ahmed Nadeem_
 - _ahmed.nadeem1@uoit.net_
 
-## About Scala
+## Introduction to Scala
 
 _What is Scala?_
-> 
-> - History
+Scala is a modern, general-purpose programming language designed to communicate common programming constructs in a concise, elegant and efficient manner. Scala is a blend of the words, "scalable language," which imply the language is designed to grow per the demand of its users.
+
+_History_
+Scala was created by German Scientist, Martin Odersky
 > - Some interesting features
 
 ## About the syntax
