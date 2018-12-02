@@ -1,7 +1,7 @@
 # _Scala Programming Language_
 
-- _Ahmed Nadeem_
-- _ahmed.nadeem1@uoit.net_
+- Ahmed Nadeem
+- ahmed.nadeem1@uoit.net
 
 ## Introduction to Scala
 
