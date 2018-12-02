@@ -5,7 +5,7 @@
 
 ## Introduction to Scala
 
-_What is Scala?_
+### _What is Scala?_
 Scala is a modern, general-purpose programming language designed to communicate common programming constructs in a concise, elegant and efficient manner. Scala is a blend of the words, "scalable language," which imply the language is designed to grow per the demand of its users.
 
 _History_
