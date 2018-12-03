@@ -10,6 +10,7 @@ Scala is a modern, general-purpose programming language designed to communicate 
 
 ### History
 Scala was created by German Scientist, Martin Odersky, who started its designs in 2001. It was influenced by many languages such as Erlang, Haskell, Standard ML, and most notably, Java. Its first version (1.0) was released in 2003, but made its way to the Java platform in 2004. Its second version (2.0) was released in 2006. The current most stable version, 2.12.7, was released on September 27, 2018. The langugage is approximately 15 years old, so its not as vastly known as C, C++, Python, and Java, but it has been maintained and updated frequently since it's initial release, and it is getting very popular among programmers.
+
 ### Interesting features
 
 
