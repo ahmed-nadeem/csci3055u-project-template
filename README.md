@@ -14,34 +14,54 @@ Scala was created by German Scientist, Martin Odersky, who started its designs i
 ### Interesting features
 - It is purely object-oriented
 - It is a functional programming language
-- It is statically typed
+- It is statically typed with type-inference
 - It runs on the Java Virtual Machine (JVM)
 
 ## About the syntax
 Scala shares very similar syntax to Java, so if you have a strong understanding and working knowledge of Java, it will be easy and fast for you to learn Scala.
 
 Some basic constructs include: 
-- expressions
-- blocks 
-- classes
-- objects
-- functions
-- methods
-- traits
-- closures.
-> _give some code snippet of the language_
+- Expressions
+- Blocks 
+- Classes
+- Objects
+- Functions
+- Methods
+- Traits
+- Closures.
 
-*Hello World example*
-
+### Expressions
+Expressions are just computable statements, such as 1 + 1. These statements can be displayed using the *println()* statement.
 ```scala
-object HelloWorld {
-   // This is my first java program.  
-   // This will print 'Hello World' as the output
-   def main(args: Array[String]) {
-      println("Hello, world!")
-   }
-}
+println(1) // 1
+println(1 + 1) // 2
+println("Hello!") // Hello!
+println("Hello" + " World!") // Hello World!
+
 ```
+#### Values
+Expressions results can be named using the keyword, *val*. These results are called values, so referencing a value does not re-compute it, and it also cannot be re-assigned as val declarations are immutable.
+```scala
+val sum = 2 + 2
+println(sum) // 4
+sum = 5 // This does not compile
+
+```
+Although statically typed, Scala has a built in type-inference mechanism and so for example, it is usually not necessary to specify the type of variable since the compiler can automatically figure out what type it is during its initialization. However, you can declare the type incase the compiler is not able to infer its type.
+```scala
+val x: Int = 1 + 1 // declaring type Int, comes after the identifier and a ':'
+
+```
+#### Variables
+Variables are values that can be re-assigned as they are mutable. You can declare a variable using the keyword, *var*.
+```scala
+var product = 3 * 3 // product var assigned to 9
+product = 10 // re-assigned to 10
+println(x * x) // 100
+
+```
+### Blocks
+
 
 ## About the tools
 
