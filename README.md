@@ -1,6 +1,6 @@
 # Scala Programming Language
 
-- Ahmed Nadeem
+- Ahmed Nadeem (100619947)
 - ahmed.nadeem1@uoit.net
 
 ## Introduction to Scala
@@ -12,29 +12,34 @@ Scala is a modern, general-purpose programming language designed to communicate 
 Scala was created by German Scientist, Martin Odersky, who started its designs in 2001. It was influenced by many languages such as Erlang, Haskell, Standard ML, and most notably, Java. Its first version (1.0) was released in 2003, but made its way to the Java platform in 2004. Its second version (2.0) was released in 2006. The current most stable version, 2.12.8, was released on December 4, 2018. The langugage is approximately 15 years old, so its longevity does not give it as much credibility as the likes of C, C++, Python, and Java, but it has been maintained and updated frequently since its initial release, and it is getting very popular among programmers.
 
 ### Interesting features
-- It is purely object-oriented
-- It runs on the Java Virtual Machine (JVM)
-- Type-Inference: Scala compiler usually automatically detects data type of an expression
-- Singleton Object: Scala does not have static variables and methods, instead it uses an *Object* which is an instance of a class
-- Immutability: Scala by default declares every variable as immutable, but it can explicitly be declared to mutable as well 
-- Lazy Evaluation: Scala supports call-by-need which improves performance
-- Higher-Order Functions: A function that takes another function as a parameter or returns it
+- It is purely **object-oriented**
+- It runs on the **Java Virtual Machine (JVM)**
+- **Type-Inference:** Scala compiler usually automatically detects data type of an expression
+- **Singleton Object:** Scala does not have static variables and methods, instead it uses an *Object* which is an instance of a class
+- **Immutability:** Scala by default declares every variable as immutable, but it can explicitly be declared to be mutable as well 
+- **Lazy Evaluation:** Scala supports call-by-need which improves performance
+- **Higher-Order Functions:** A function that takes another function as a parameter or returns it
 
 ## About the syntax
 Scala shares very similar syntax to Java, so if you have a strong understanding and working knowledge of Java, it will be easy and fast for you to learn Scala. 
 
-- Comments: can be single-line with // or multi-line with /* ... */
-- Data Types: Int (1), Double (1.0), Float (1.0) String ("Hello"), Char ('C'), Boolean (true/false), etc.
+- **Comments:** can be single-line with // or multi-line with /* ... */
+- **Data Types:** Int (1), Double (1.0), Float (1.0) String ("Hello"), Char ('C'), Boolean (true/false), etc.
 
-**Syntax Rules:**
-- Case-Sensitive: This means that Scala treats the identifiers *hello* and *Hello* differently
-- Class Names: For all class names, the first letter should be capitalized. If several words are used to form a name of the class, each inner word's first letter should be capitalized; Ex: *class FirstScalaProgram*
-- Method Names: All method names should start with a lower case letter. If multiple words are used to form the name of the method, then each inner word's first letter should be capitalized; Ex: *def myMethodName()*
-- Program File Name: The name of the program should be the name of the Object (if file name and Object name do no match, program will not compile); Ex: *'FirstProgram'* is Object name, then file name should be *'FirstProgram'.scala*
-- Main Method: Every Scala program starts processing from the main() method which is mandatory; Ex: *def main(args: Array[String])*
-- Keywords: Scala reserves some words which cannot be used as constant, variable, or any identifier names; Ex: *def*, *abstract*, *lazy*, *object*, *if*, *else*, *for*, *while*, etc.
+### Syntax Rules:
+- **Case-Sensitive:** This means that Scala treats the identifiers *hello* and *Hello* differently
+- **Class Names:** For all class names, the first letter should be capitalized. If several words are used to form a name of the class, each inner word's first letter should be capitalized
+  - Ex: *class FirstScalaProgram*
+- **Method Names:** All method names should start with a lower case letter. If multiple words are used to form the name of the method, then each inner word's first letter should be capitalized
+  - Ex: *def myMethodName()*
+- **Program File Name:** The name of the program should be the name of the Object (if file name and Object name do no match, program will not compile)
+  - Ex: *'FirstProgram'* is Object name, then file name should be *'FirstProgram'.scala*
+- **Main Method:** Every Scala program starts processing from the main() method which is mandatory
+  - Ex: *def main(args: Array[String])*
+- **Keywords:** Scala reserves some words which cannot be used as constant, variable, or any identifier names
+  - Ex: *def*, *abstract*, *lazy*, *object*, *if*, *else*, *for*, *while*, etc.
 
-**There are many syntactic differences as well, some of them are:**
+**There are many syntactic differences to Java as well, some of them are:**
 - In Scala, a *semicolon* is optional to end statements
 - Value types are capitalized: *Int*, *Double*, *Float* instead of *int*, *double*, *float*
 - Methods must be preceded by *def*
@@ -42,16 +47,7 @@ Scala shares very similar syntax to Java, so if you have a strong understanding 
 - The *return* operator is allowed, however it is unnecessary as it only returns from the inner most *def* that surrounds it, so      it can be error prone
 - Scala uses *import foo._* instead of Java's *import foo.*\*;
 
-**Some basic constructs include:** 
-- Expressions
-- Blocks
-- Functions
-- Methods
-- Classes
-- Objects
-- Traits
-- Closures.
-
+**Some basic constructs include:** expressions, blocks, functions, methods, classes, objects, and traits
 ### Expressions
 Expressions are just computable statements, such as 1 + 1. These statements can be displayed using the *println()* statement.
 ```scala
@@ -108,7 +104,7 @@ def sumOfSquares(x: Int, y: Int): Int = {
 (println(sumOfSquares(3, 4)) // 25
 ```
 ### Classes
-Classes can be fined with the *class* keyword followed by its name and constructor parameters. An instance of a class can be made using the *new* keyword.
+Classes can be defined with the *class* keyword followed by its name and constructor parameters. An instance of a class can be made using the *new* keyword.
 ```scala
 class Greeter(prefix: String, suffix: String) {
   def greet(name: String): Unit =    // return type of greet is Unit, which is similar to void from Java
@@ -134,14 +130,45 @@ println(newId) // 1
 val newerId: Int = IdFactory.create()
 println(newerId) // 2
 ```
-## About the tools
+### Traits
+Traits hold fields and methods, and they can be defined using the *trait* keyword. They can also be combined.
+```scala
+trait Dog {           // creating trait
+    def breed: String
+    def colour: String
+    def bark: Boolean = true
+    def bite: Boolean
+}
+class SaintBernard extends Dog {    // class extends trait
+    val breed = "Saint Bernard"
+    val colour = "brown"
+    def bite = false
+}
 
-> _Describe the compiler or interpreter needed_.
+val b = new SaintBernard
+println (b.colour) // brown
+```
+
+## About the tools
+### Java SDK
+As mentioned Scala runs on the JVM so Java is a necessity, specifically Java SDK 8.0 or higher. Scala can be installed on any UNIX flavour or Windows based system. Incase you do not have Java SDK, download and install its current version from: http://www.oracle.com/technetwork/java/javase/downloads/index.html and add it your path.
+- You can check your version in windows by going to command prompt and typing in *'java -version'*
+- Similarly, in linux by going to terminal and typing in *'java -version'*
+
+### Downloading Scala
+There are many ways of downloading Scala. You can either use an IDE, such as IntelliJ or through commandline/terminal and using your favourite editor. Whichever you prefer can be downloaded from: https://www.scala-lang.org/download/. 
+- You can check your version in windows by going to command prompt and typing in *'scala -version'*
+- Similarly, in linux by going to terminal and typing in *'scala -version'*
+
+Once installed, you can type in *'scala'* into your command prompt or terminal window to start the REPL. With this you can practice coding in the language.
 
 ## About the standard library
-
 > _Give some examples of the functions and data structures
 > offered by the standard library_.
+The Scala standard libary comes with a plethora of packages to support large scale code development. One of them is the collections library, which Scala states is easy to use, concise, safe, fast, and universal.
+- **scala.collection** and its subpackages contain the collections framework
+- 
+
 
 ## About open source library
 
@@ -151,11 +178,17 @@ community written in the language._
 # Analysis of the language
 
 > _1. The style of programming supported by the language: functional vs procedural programming_.
+
 > _2. The ability to perform meta-programming such as macros_.
+
 > _3. Symbol resolution and its support for closure_.
+
 > _4. Scoping rules supported by the language: lexical vs dynamic scoping_.
+
 > _5. Functional programming constructs either as part of the language or supported by the standard library of the runtime_.
+
 > _6. Its type system: static vs dynamic types_.
+
 > _7. Strengths and weaknesses of the language_.
 
 
