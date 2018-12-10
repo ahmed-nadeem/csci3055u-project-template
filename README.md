@@ -52,9 +52,7 @@ Scala shares very similar syntax to Java, so if you have a strong understanding 
 Expressions are just computable statements, such as 1 + 1. These statements can be displayed using the *println()* statement.
 ```scala
 println(1) // 1
-println(1 + 1) // 2
 println("Hello!") // Hello!
-println("Hello" + " World!") // Hello World!
 ```
 #### Values
 Expressions results can be named using the keyword, *val*. These results are called values, so referencing a value does not re-compute it, and it also cannot be re-assigned as val declarations are immutable.
@@ -94,30 +92,30 @@ val getAge = () => 20 // defined with an identifier and no parameters
 println(getAge()) // 20
 ```
 ### Methods
-Although very similar to functions, Methods have some key differences. they are defined with the keyword *def*, followed by an identifier, parameter lists, a return type, and a body. The return type is declared after the parameter list and a colon ':'. Methods can have multi-line expressions, where the last expression is the return value.
+Although very similar to functions, Methods have some key differences. they are defined with the keyword *def*, followed by an identifier, parameter lists, a return type, and a body. The return type is declared after the parameter list and a colon *':'*. Methods can have multi-line expressions, where the last expression is the return value.
 ```scala
 def sumOfSquares(x: Int, y: Int): Int = {
   val x2 = x * x
   val y2 = y * y
-  x2 + y2
+  x2 + y2         // return value
 }
 (println(sumOfSquares(3, 4)) // 25
 ```
 ### Classes
 Classes can be defined with the *class* keyword followed by its name and constructor parameters. An instance of a class can be made using the *new* keyword.
 ```scala
-class Greeter(prefix: String, suffix: String) {
+class Welcome(prefix: String, suffix: String) {
   def greet(name: String): Unit =    // return type of greet is Unit, which is similar to void from Java
     println(prefix + name + suffix)
 }
 
-val greeter = new Greeter("Hello, ", "!")
-greeter.greet("Scala developer") // Hello, Scala developer!
+val person = new Welcome("Hello, ", "!")
+person.greet("Ahmed Nadeem") // Hello, Ahmed Nadeem!
 ```
 ### Objects
 As stated above, Objects are singleton instances of their own classes and can be defined using the keyword *object*. Classes usually have an "object companion" where the per-instance behavior is captured in the classes themselves, but behavior related to all instances of that class go in the object.
 ```scala
-object IdFactory {         // creating an object
+object Count {         // creating an object
   private var counter = 0
   def create(): Int = {    // defining a method within object
     counter += 1
@@ -125,10 +123,10 @@ object IdFactory {         // creating an object
   }
 }
 
-val newId: Int = IdFactory.create()    // accessing object
-println(newId) // 1
-val newerId: Int = IdFactory.create()
-println(newerId) // 2
+val countId1: Int = Count.create()    // accessing object
+println(countId1) // 1
+val countId2: Int = Count.create()
+println(countId2) // 2
 ```
 ### Traits
 Traits hold fields and methods, and they can be defined using the *trait* keyword. They can also be combined.
@@ -151,24 +149,38 @@ println (b.colour) // brown
 
 ## About the tools
 ### Java SDK
-As mentioned Scala runs on the JVM so Java is a necessity, specifically Java SDK 8.0 or higher. Scala can be installed on any UNIX flavour or Windows based system. Incase you do not have Java SDK, download and install its current version from: http://www.oracle.com/technetwork/java/javase/downloads/index.html and add it your path.
-- You can check your version in windows by going to command prompt and typing in *'java -version'*
-- Similarly, in linux by going to terminal and typing in *'java -version'*
+As mentioned Scala runs on the JVM so Java is a necessity, specifically Java SDK 8.0 or higher. Scala can be installed on any of the Linux, Windows, or Mac based systems. Incase you do not have Java SDK, download and install its current version from: http://www.oracle.com/technetwork/java/javase/downloads/index.html and add it your path.
+- You can check your version in windows by going to command prompt and typing in *'javac -version'*
+- Similarly, in linux by going to terminal and typing in *'javac -version'*
 
 ### Downloading Scala
-There are many ways of downloading Scala. You can either use an IDE, such as IntelliJ or through commandline/terminal and using your favourite editor. Whichever you prefer can be downloaded from: https://www.scala-lang.org/download/. 
+There are many ways of downloading Scala. You can either use an IDE, such as IntelliJ and the Scala Build Tool (SBT), the commandline and SBT alongside your favourite text editor, or directly via commandline with Scala binaries. Whichever you prefer can be downloaded from: https://www.scala-lang.org/download/. 
+
+With SBT you can create a Scala project with a template which can run, compile, and test your project. To get comfortable with the basics of SBT, follow the steps in this link: https://docs.scala-lang.org/getting-started-sbt-track/getting-started-with-scala-and-sbt-on-the-command-line.html
 - You can check your version in windows by going to command prompt and typing in *'scala -version'*
 - Similarly, in linux by going to terminal and typing in *'scala -version'*
 
 Once installed, you can type in *'scala'* into your command prompt or terminal window to start the REPL. With this you can practice coding in the language.
 
 ## About the standard library
-> _Give some examples of the functions and data structures
-> offered by the standard library_.
-The Scala standard libary comes with a plethora of packages to support large scale code development. One of them is the collections library, which Scala states is easy to use, concise, safe, fast, and universal.
-- **scala.collection** and its subpackages contain the collections framework
-- 
+The Scala standard libary comes with a plethora of packages to support large scale code development. Some of the packages are collections, concurrent, io, math, sys, and matching. These allow for more convenient and efficient approaches to programming. To import a package, the notation *import.foo._* is used. The underline imports everything from the package, but you can specify the exact subpackage you might need.
 
+**Some interesting functions of the collections library include:**
+- **Arrays:** can be Int, Double, String, or generic. Although not directly sequences, can be converted to them and use more functionalities
+- **Strings:** Same as arrays in that they can be converted to sequences and use operations such as *reverse*, *slice*
+- **Iterators:** A way to access collections 1 by 1, with *it*. The two basic operations of *it* are *next* and *hasNext*
+- **Maps:** A Map is an Iterable consisting of pairs of keys and values. 
+  - Ex: Map("x" -> 24, "y" -> 25, "z" -> 26). It has many operations for further usability
+- **Sets:** A Set is an Iterable that contains no duplicate elements, and it has many usable operations as well
+- **Seqs:** A Seq is a sequence which allows for many operations such as sorting, indexing, updating, reversing, etc.
+
+**Some interesting data structures of the collections libary include:**
+- HashMap
+- Queue
+- Stack
+- Vector
+- TreeMap
+- LinkedList
 
 ## About open source library
 
@@ -177,18 +189,23 @@ community written in the language._
 
 # Analysis of the language
 
-> _1. The style of programming supported by the language: functional vs procedural programming_.
+**The style of programming supported by the language: functional vs procedural programming**
+> Scala is a multi-paradigm programming language so it supports more than one style to better suit the constructs for a task. With that being said, Scala supports many functional programming features, such as currying, type inference, immutability, higher-order functions, lazy evaluation, and pattern matching, but its main focus is on object-oriented programming in that almost everything in Scala is an object. The behaviours of objects are explained through the functionalities of classes and traits. Scala has case classes which are instantiable classes that are better for modeling immutable data, and especially for pattern matching. 
 
-> _2. The ability to perform meta-programming such as macros_.
+**The ability to perform meta-programming such as macros**
+> Before the release of Scala 2.10, Scala did not officially have metaprogramming tools but there were some work arounds such as importing *java.lang.reflect*, the reflection library. Reflection is a commonly used term in many programming languages and it allows the ability to turn implicit elements of a program into explicit, or otherwise known as *reify*. Scala now supports compile-time reflections, and this is mainly in the form of *macros*. Defining macros is very similar to defining normal functions, except the body is defined by the keyword *macro* and is followed by an identifier that refers to a static macro implementation method. You can also use macros with SBT. Here is an example: https://github.com/scalamacros/sbt-example-newstyle.
 
-> _3. Symbol resolution and its support for closure_.
+**Symbol resolution and its support for closure**
+> Scala supports closure functionality, in which a fuction's return value is dependent on the variables declared outside of its scope. This is allowed because code blocks can be passed as values, anyone with the values can execute the code block, and it can refer to the variables from the cotext it was created in.
 
-> _4. Scoping rules supported by the language: lexical vs dynamic scoping_.
+**Scoping rules supported by the language: lexical vs dynamic scoping**
+> Scala primarily uses lexical scoping with the implementations of blocks via code in curly brackets *{}*. Outer blocks are visible within inner blocks. Dynamic scoping is also possible, but is generally a bad idea as programmers have no control over how their functions will be called.
 
-> _5. Functional programming constructs either as part of the language or supported by the standard library of the runtime_.
+**Functional programming constructs either as part of the language or supported by the standard library of the runtime**
+> Scala consists of many functional programming contructs: currying, type inference, immutability, higher-order functions, lazy evaluation, and pattern matching. Currying is technique of transforming a function with multiple parameters into a function with just one. This provides an example of currying in Scala: http://baddotrobot.com/blog/2013/07/21/curried-functions/. Type-inference is explained more below. Immutability refers to not being able to change the value of a variable, which in turn helps manage concurrency control. Scala permits higher-order functions because it treats functions as first-class citizens, and thus functions can take other functions as their parameters. Scala supports lazy evaluation, which allows for more concise programming. This gives an example of lazy evaluation and comparing it to the recursive alternative: https://www.scala-exercises.org/scala_tutorial/lazy_evaluation. Lastly, Scala allows pattern matching for processing strings, and this can be established using the keyword *case*.
 
-> _6. Its type system: static vs dynamic types_.
+**Its type system: static vs dynamic types**
+> Scala is statically typed with type-inference, as mentioned in one of its interesting features. This means that Scala allows the programmer to avoid verbose typing (does not need to specify the type of variables), but still maintain compile-time type safety. This results in a middle-ground between static and dynamic typing by getting their best component and merging it into one.
 
-> _7. Strengths and weaknesses of the language_.
-
-
+**Strengths and weaknesses of the language**
+> Many of Scala's strengths come from addressing the issues developers have with Java. So some of the advantages of Scala are: better coding and performance from the complex features, being a multi-paradigm language allows for concise and functional code (fewer lines of code, faster development, testing, and deployment), being compatible with Java and Interoperability (Developers can keep Java libaries and take further advantage of JVM), having advanced features (string comparison, pattern matching, mixins; which allow functions in class definitions), includes a full-featured API library that is not bloated, and because of its versatility scalable mediums (LinkedIn, Amazon, and Twitter) are integrating Scala into their development. Scala has a lot of advantages, but it also has its disadvantages as well, such as: debugging domain specific language (DSL) is a pain because of insufficient tooling, it can be hard to learn because of the many functional programming constructs, the community is still expanding so there is not as much presence as Java/C/C++/Python.
