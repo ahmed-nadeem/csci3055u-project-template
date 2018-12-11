@@ -5,13 +5,13 @@
 println(1)
 println("Hello!")
 
-// values are immutable
+// Values are immutable
 // declare value w/o identifying type (Scala automatically can determine this)
 val sum = 2 + 2
 // declare value of type Int
 val x: Int = 1 + 1
 
-// variables are mutable
+// Variables are mutable
 var product = 3 * 3
 product = 10
 println(product * product)
@@ -29,7 +29,7 @@ println( {
 val add = (x: Int, y: Int) => x + y
 println(add(3, 3))
 
-// conditionals
+// Conditionals
 val x = 10
 if (x == 10) 
   println("yeah") 
@@ -44,7 +44,7 @@ while (a < 20) {
   a = a + 1
 }
 
-// for loop
+// For loop
 var a = 0
 for (a <- 1 to 5) {
   println ("Value of a: " + a)
