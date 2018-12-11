@@ -70,7 +70,7 @@ Variables are values that can be re-assigned as they are mutable. You can declar
 ```scala
 var product = 3 * 3 // product var assigned to 9
 product = 10 // re-assigned to 10
-println(x * x) // 100
+println(product * product) // 100
 ```
 ### Blocks
 Expressions can be combined by surrounding them with *{}*. This is called a block. The result of the last expression in the block is the result of the overall block.
