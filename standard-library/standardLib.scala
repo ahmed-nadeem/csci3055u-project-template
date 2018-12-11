@@ -1,8 +1,8 @@
 // This file will go over useful functionalities of the Scala standard library
 
-// File I/O
+// File I/O (Scala makes use of many java libraries)
 // writing to a file
-import scala.io._
+import java.io._
 
 object Writing {
    def main(args: Array[String]) {
