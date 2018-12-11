@@ -29,9 +29,7 @@ object NewtonsMethod {
   }
   
   // Newton's Method for solving equations.
-  def newtonsMethod(fx: Double => Double, 
-                    fxPrime: Double => Double,
-                    x: Double,
+  def newtonsMethod(fx: Double => Double, fxPrime: Double => Double, x: Double, 
                     tolerance: Double): Double = {
     var x1 = x
     var xNext = newtonsMethodHelper(fx, fxPrime, x1)
