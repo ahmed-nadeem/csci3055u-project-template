@@ -183,9 +183,11 @@ The Scala standard libary comes with a plethora of packages to support large sca
 - LinkedList
 
 ## About open source library
+### Apache Spark
+An open source contribution to the Scala library is Apache Spark. Spark is a fast and general cluster computing system for Big Data. It provides high-level APIs in Scala, Java, Python, and R, and an optimized engine that supports general computation graphs for data analysis. It also supports a rich set of higher-level tools including Spark SQL for SQL and DataFrames, MLlib for machine learning, GraphX for graph processing, and Spark Streaming for stream processing.
 
-> _Describe at least one contribution by the open source
-community written in the language._
+http://spark.apache.org/
+https://github.com/apache/spark
 
 # Analysis of the language
 
